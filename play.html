@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Melodify</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(45deg, #f8e1f4, #ffe2cc, #d8c4ff, #ffdede);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  transition: background 1s ease-in-out;
+  color: #333;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+       /* Header Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: transparent;
+}
+
+/* Logo and Name */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Dancing Script", cursive;
+  color:#e7971e;
+}
+
+/* Navigation links + Cart */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color:cadetblue;
+}
+
+.cart-btn {
+  background-color: #FFD89C;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+.cart-btn:hover{
+  padding:9px 17px;
+  background-color:cadetblue;
+}
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .about-content h1 {
+      font-size: 3rem;
+      color: #874c8c;
+      margin-bottom: 1rem;
+    }
+
+    .about-content p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .about-img {
+      flex: 1;
+    }
+
+    .about-img img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .other-projects {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .other-projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #874c8c;
+  }
+
+  .project-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: #fff0f5;
+    padding: 1.5rem;
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .project-card h3 {
+    font-size: 1.4rem;
+    color: #c074a6;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .project-card a {
+    text-decoration: none;
+    color: #874c8c;
+    font-weight: 600;
+    background: #ffdde1;
+    padding: 8px 16px;
+    border-radius: 14px;
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+
+  .project-card a:hover {
+    background: #fbc2eb;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+  }
+  /* --- RESPONSIVE STYLES --- */
+
+/* For screens smaller than 992px (e.g., tablets) */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 30px; /* Reduce padding */
+    }
+
+    .brand-name {
+        font-size: 1.3rem; /* Slightly smaller font for brand name */
+    }
+
+    .nav-links {
+        gap: 20px; /* Reduce gap between nav links */
+    }
+
+    .nav-links a {
+        font-size: 0.95rem; /* Slightly smaller nav link font */
+    }
+
+    .cart-btn {
+        padding: 7px 14px; /* Slightly smaller button */
+    }
+
+    .container {
+        padding: 3rem 1.5rem; /* Reduce container padding */
+        gap: 2rem; /* Reduce gap between about content and image */
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center; /* Center text when stacked */
+    }
+
+    .about-content h1 {
+        font-size: 2.5rem; /* Smaller heading */
+    }
+
+    .about-content p {
+        font-size: 1.1rem; /* Smaller paragraph text */
+    }
+
+    .about-img {
+        order: -1; /* Place image above content on smaller screens */
+    }
+
+    .about-img img {
+        max-width: 400px; /* Adjust max-width for image */
+    }
+
+    .other-projects h2 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .project-card {
+        width: calc(50% - 2rem); /* Two cards per row, with gap */
+        max-width: 350px; /* Prevent cards from getting too wide on larger tablets */
+    }
+}
+
+/* For screens smaller than 768px (e.g., larger phones) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        /* Implement a hamburger menu here for nav-links if needed */
+        /* For simplicity, let's just make nav-links stack for now or hide some */
+    }
+
+    .nav-links {
+        /* On smaller screens, you might want to hide these and use a toggle menu.
+           For now, let's just make them responsive. */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Take out of flow */
+        top: 60px; /* Position below navbar */
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: none; /* Hide by default, would need JS to toggle */
+        padding: 10px 0;
+        z-index: 1000; /* Ensure it's on top */
+    }
+
+    .nav-links.active { /* Class to be toggled by JS */
+        display: flex;
+    }
+
+    .nav-links a, .cart-btn {
+        width: auto; /* Allow items to fit content */
+        text-align: center;
+        padding: 10px 0;
+        margin: 5px auto; /* Center individual links */
+    }
+
+    /* Add a hamburger icon (you'd need to add this HTML) */
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #444;
+    }
+
+    /* Assuming you have a menu-toggle in HTML, hide nav-links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* And add this to your HTML near your nav:
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="your-logo.png" alt="Logo" class="logo">
+            <span class="brand-name">YourBrand</span>
+        </div>
+        <div class="menu-toggle">&#9776;</div> <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button class="cart-btn">Cart</button>
+        </div>
+    </div>
+    You would then need JavaScript to toggle the 'active' class on .nav-links when .menu-toggle is clicked.
+    */
+
+
+    .about-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        width: 90%; /* One card per row, with some padding */
+        margin: 0 auto; /* Center the card */
+    }
+
+    .other-projects {
+        padding: 2rem 1rem; /* Smaller padding */
+    }
+
+    .other-projects h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* For screens smaller than 480px (e.g., smaller phones) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px; /* Even less padding */
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .about-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    .other-projects h2 {
+        font-size: 1.6rem;
+    }
+
+    .project-card {
+        padding: 1rem; /* Smaller padding for cards */
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+
+    .project-card a {
+        padding: 6px 12px; /* Smaller button for links */
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+  <div class="logo-container">
+    <img src="https://i.ibb.co/bMqH0ZXC/image.png" alt="Melodify Logo" class="logo" />
+    <span class="brand-name">Melodify</span>
+  </div>
+</header>
+
+
+  <section class="container">
+    <div class="about-content">
+      <h1>About Melodify</h1>
+      <p>
+        <strong>Melodify</strong> is a heartfelt creation by <strong>Manav</strong>, a passionate class 12th student who believes music is the purest escape. Melodify isn't just a music player—it's an experience designed to make you feel warm, nostalgic, and truly connected to your favorite melodies. With a soft aesthetic and cozy UI, Melodify invites you to sit back, relax, and hit play.
+      </p>
+    </div>
+    <div class="about-img">
+      <img src="https://cdn.pixabay.com/photo/2017/01/26/12/32/alpine-2010465_640.png" alt="About Melodify" />
+    </div>
+  </section>
+  <!-- 🌸 New Other Projects Section -->
+<section class="other-projects">
+  <h2>Other Projects</h2>
+  <div class="project-list">
+    <div class="project-card">
+      <h3>MindfulMe</h3>
+      <p>A meditation & wellness app to help you find peace and focus.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>CodeBloom</h3>
+      <p>A beginner-friendly platform to learn web development with a creative twist.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>PoetryPad</h3>
+      <p>A cozy space to read and write shayari, poems, and heart-touching lines.</p>
+      <a href="#">View Project</a>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    &copy; 2025 Melodify. Created with ❤️ by Manav.
+  </footer>
+</body>
+</html>

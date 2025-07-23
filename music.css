@@ -1,0 +1,1229 @@
+    /* General Styles - Dark Theme */
+        :root {
+            --primary-bg: #121212; /* Very Dark Gray/Black */
+            --sidebar-bg: #1A1A1A; /* Slightly Lighter Dark Gray */
+            --main-content-bg:white; /* This is "PeachPuff" in CSS named colors */;/* Another Dark Gray for Main Area */
+            --card-bg: #282828; /* Darker Gray for Cards */
+            --accent-green:#8A2BE2; /* Spotify-like Green */
+            --accent-blue: #007ACC; /* Soft Blue for accents */
+            --accent-purple: #8A2BE2; /* Bluish-Purple */
+            --text-light: #E0E0E0; /* Light Gray for main text */
+            --text-lighter: #B3B3B3; /* Lighter gray for secondary text */
+            --border-color: rgba(255, 255, 255, 0.05); /* Very subtle white border */
+            --shadow-color: rgba(0, 0, 0, 0.5); /* Darker shadows */
+        }
+
+ body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-light); /* Assuming --text-light is defined elsewhere */
+
+            /* Background Image Properties - These are the properties you want to keep! */
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-abstract-music-background-with-musical-notes-and-waves-image_16197730.jpg'); /* This initial image will be replaced by JS */
+            background-size: cover; /* This is the most important one: scales the image to cover the entire container */
+            background-position: center center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Optional: Makes the background image fixed while scrolling */
+
+            display: flex; /* Keep this if you're using flexbox for layout */
+            min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+            overflow-x: hidden; /* Prevents horizontal scrollbar */
+            /* Optional: A fallback background color in case the image doesn't load */
+            background-color: #333; /* Dark fallback color */
+
+            /* NEW: Add transition for background-image for smooth fading */
+            transition: background-image 2s ease-in-out;
+            
+        }
+        .image-container{
+            margin-top: 10px;
+            width:100%;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: var(--sidebar-bg);
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-color);
+            box-shadow: 2px 0 10px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .sidebar-logo {
+            padding: 0 20px 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: var(--text-lighter);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0 25px 25px 0;
+            margin-right: 10px;
+        }
+
+        .sidebar-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.05); /* Subtle hover */
+            color: var(--text-light);
+        }
+
+        .sidebar-nav a.active {
+            background-color: var(--accent-green);
+            color: #FFFFFF;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar-nav a i {
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .sidebar-section-title {
+            padding: 15px 20px 10px;
+            font-size: 0.9em;
+            color: var(--text-lighter);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        /* Main Content */
+        .main-content {
+    flex-grow: 1;
+    padding: 30px;
+    border-radius: 20px;
+    margin:50px;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    /* Glassmorphism styles */
+    background: black;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search-bar input {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            background-color:lightgrey; /* Light gray for input background */
+            width: 300px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1em;
+            color: var(--text-light);
+            outline: none; /* Remove outline on focus */
+        }
+
+        .search-bar input::placeholder {
+            color:rgb(121, 31, 206);
+            opacity: 5;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 15px;
+            object-fit: cover;
+            border: 2px solid var(--accent-green);
+        }
+
+        /* Featured Section - Animated Container */
+        .featured-section {
+            margin-bottom: 40px;
+            position: relative;
+            min-height: 250px;
+        }
+
+        .featured-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .featured-header h2 {
+            font-size: 2em;
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        .featured-nav-arrows button {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: 10px;
+            color: var(--text-lighter);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .featured-nav-arrows button:hover {
+            background-color: var(--accent-green);
+            color: #FFFFFF;
+            border-color: var(--accent-green);
+        }
+
+        .featured-album-display {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            border-radius: 30px;
+            box-shadow: 0px 8px 25px var(--shadow-color);
+        }
+
+        .featured-album-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+             border-radius: 30px;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #FFFFFF; /* White text on album cards */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .featured-album-card.active {
+            opacity: 5;
+            z-index: 2;
+        }
+
+        .featured-album-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+             border-radius: 30px;
+            object-fit: cover;
+            z-index: 1;
+           
+        }
+
+        .featured-album-content {
+            position: relative;
+            z-index: 3;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Stronger text shadow */
+        }
+
+        .featured-album-content h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .featured-album-content p {
+            margin: 0;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .featured-album-play-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-green); /* Green play button */
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .featured-album-play-button:hover {
+            transform: scale(1.05);
+            background-color: #1ED760; /* Slightly brighter green on hover */
+        }
+
+        .featured-album-play-button i {
+            color: #FFFFFF; /* White icon on green button */
+            font-size: 1.8em;
+        }
+
+        /* Select Categories */
+        .categories-section {
+            margin-bottom: 40px;
+        }
+
+        .categories-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-button {
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            background-color: var(--card-bg); /* Dark background for buttons */
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.95em;
+            color: var(--text-lighter);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-button:hover {
+            background-color: rgba(255, 255, 255, 0.15); /* Lighter dark hover */
+            color: var(--text-light);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .category-button.active {
+            background-color: var(--accent-green); /* Active green */
+            color: #FFFFFF;
+            border-color: var(--accent-green);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Category Content Containers */
+        .category-content-container {
+            display: none;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .category-content-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Song Cards (used for category content as well) */
+        .songs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .song-card {
+            background-color:grey; /* Dark card background */
+            border-radius: 15px;
+            box-shadow: 0px 3px 10px var(--shadow-color);
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px var(--shadow-color);
+            background-color: #333333; /* Slightly lighter on hover */
+        }
+
+        .song-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 10px;
+            filter: brightness(0.9); /* Slightly dim images for dark theme */
+        }
+
+        .song-card h4 {
+            margin: 0 10px 5px;
+            font-size: 1.1em;
+            color: var(--text-light);
+        }
+
+        .song-card p {
+            margin: 0 10px;
+            font-size: 0.85em;
+            color: var(--text-lighter);
+        }
+
+        /* Utility */
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        /* Basic responsiveness */
+        @media (max-width: 1200px) {
+            .main-content {
+                padding: 20px;
+            }
+            .featured-album-card {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 2px 10px var(--shadow-color);
+                padding-bottom: 0;
+            }
+            .sidebar-nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+                padding-bottom: 10px;
+            }
+            .sidebar-nav a {
+                border-radius: 25px;
+                margin-right: 0;
+            }
+            .sidebar-logo, .sidebar-section-title {
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .main-content {
+                margin: 20px;
+                border-radius: 15px;
+                padding: 15px;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+            .search-bar input {
+                width: 100%;
+                max-width: 400px;
+            }
+            .featured-album-card {
+                height: 200px;
+            }
+            .songs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .featured-album-card {
+                height: 180px;
+            }
+            .featured-album-play-button {
+                width: 45px;
+                height: 45px;
+            }
+            .featured-album-play-button i {
+                font-size: 1.5em;
+            }
+            .featured-album-content h3 {
+                font-size: 1.4em;
+            }
+            .featured-album-content p {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Music Player Modal */
+
+
+ /* --- Music Player Modal Specific Styles --- */
+
+@keyframes moving-gradient {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Apply this animation when the musicPlayerBox has 'playing-gradient' class */
+.music-player-box.playing-gradient {
+    /* Existing background: linear-gradient(145deg, #00bcd4, #00acc1); */
+    /* Add a larger background size and animation */
+    background: linear-gradient(145deg, #00bcd4, #00acc1, #a200ff, #ff007f); /* More colors for dynamic movement */
+    background-size: 400% 400%; /* Make the gradient much larger than the box */
+    animation: moving-gradient 20s ease infinite alternate; /* Slower, continuous animation */
+}
+
+/* Existing gradient styles (ensure these are present and correct) */
+.music-player-box.default-gradient {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+}
+
+.music-player-box.paused-gradient {
+    background: linear-gradient(145deg, #333, #222);
+}
+
+/* General Music Player Modal Styles (ensure these are also present as they define structure) */
+.music-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.music-player-box {
+    /* Ensure existing styles for shape, shadow, padding are here */
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    position: relative; /* Important for blob's absolute positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.8s ease; /* Keep this for smoother transitions between gradients */
+    overflow: hidden; /* Ensure blob stays within bounds */
+}
+
+/* Rest of your existing CSS for progress bar, time display, controls, etc. */
+/* ... (Keep all your previously working styles here) ... */
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #bbb;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.image-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Progress Bar Styling */
+/* Progress Bar Styling */
+.progress-container {
+    width: 90%;
+    height: 8px; /* Height of the bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Background color of the track */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    position: relative; /* Crucial: This establishes the positioning context for the thumb */
+    z-index: 1; /* Ensure it's above the blob */
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%; /* JS controls this */
+    background-color:white; /* Color of the filled progress */
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.1s linear; /* Smooth movement of the bar */
+}
+
+.progress-thumb {
+    width: 16px; /* Size of the circular thumb */
+    height: 16px;
+    background-color: #fff; /* Color of the thumb */
+    border-radius: 50%; /* Makes it a circle */
+    position: absolute; /* Positioned relative to progress-container */
+    top: 50%; /* Vertically center */
+    transform: translate(-50%, -50%); /* Crucial: Centers the thumb on its 'left' point */
+    left: 0%; /* JS will control this property to move it along the bar */
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.6); /* Subtle glow */
+    pointer-events: none; /* Allows clicks on the container to go through */
+    z-index: 2; /* Ensure thumb is above the bar */
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    font-size: 0.9em;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.controls-container button {
+    background-color: #333;
+    border: none;
+    color: #ffffff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.controls-container button:hover {
+    background-color:indianred;
+    transform: scale(1.05);
+}
+
+/* Play/Pause Button Specific Styling (using Font Awesome pseudo-elements) */
+.play-pause {
+    width: 70px; /* Larger for emphasis */
+    height: 70px;
+    font-size: 2em;
+    background-color: #00bcd4; /* Default accent color */
+    box-shadow: 0 5px 20px rgba(0, 188, 212, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative; /* Needed for pseudo-elements positioning */
+}
+
+.play-pause:hover {
+    background-color:pink;
+    transform: scale(1.05);
+}
+
+/* Font Awesome Play Icon */
+.play-pause.paused::before {
+    font-family: "Font Awesome 6 Free"; /* Ensure this matches your FA version */
+    content: "\f04b"; /* Unicode for play icon */
+    font-weight: 900; /* Use 900 for Solid icons in FA 6 */
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%, -50%); /* Adjust for play triangle's visual center */
+}
+
+/* Font Awesome Pause Icon */
+.play-pause.playing::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f04c"; /* Unicode for pause icon */
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Center pause icon */
+}
+
+
+/* No changes made to existing styles above */
+
+/* --- REVISED MEDIA QUERIES BELOW --- */
+
+@media (max-width: 768px) {
+    .main-content {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .sidebar {
+        /* Keep sidebar hidden on small screens if that's the desired behavior */
+        display: none;
+    }
+
+    /* If you still want the sidebar nav to show at the top,
+       you'll need to move it out of the .sidebar container
+       in your HTML, or apply styles directly to .sidebar-nav
+       outside of the .sidebar's display: none; rule.
+       For this example, I'm assuming the sidebar itself is hidden. */
+    .sidebar-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 10px;
+        /* You might want to remove this if the sidebar is completely gone
+           and you don't have this nav elsewhere */
+    }
+
+    .sidebar-nav li {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .sidebar-nav a {
+        padding: 10px;
+        margin: 5px;
+        border-radius: 25px;
+    }
+
+    .top-bar {
+        /* Reconfigure top-bar for row layout */
+        display: flex;
+        flex-direction: row; /* Ensure row direction */
+        align-items: center; /* Vertically align items */
+        justify-content: space-between; /* Space out items */
+        flex-wrap: nowrap; /* Prevent wrapping initially */
+        gap: 10px; /* Space between elements */
+        padding: 10px; /* Add some padding to the top bar itself */
+    }
+
+    .search-bar {
+        /* Make search bar take available space but not full width */
+        flex: 1; /* Allow it to grow */
+        max-width: 250px; /* Limit its maximum width */
+        margin: 0; /* Remove extra margins */
+    }
+
+    .search-bar input {
+        width: 100%; /* Ensure input fills its container */
+        max-width: none; /* Override any larger max-width from general styles */
+    }
+
+    .sidebar-logo {
+        /* Make logo visible and align it to the right within top-bar */
+        display: block; /* Ensure it's not hidden */
+        font-size: 1.2em; /* Keep existing font size */
+        margin-left: auto; /* Push it to the right */
+        white-space: nowrap; /* Prevent breaking */
+        order: 3; /* Position after search bar and welcome heading */
+    }
+
+    .welcome-heading {
+        /* Make welcome heading visible and align it to the right */
+        display: block; /* Ensure it's not hidden */
+        font-size: 1em; /* Adjust as needed */
+        margin-left: auto; /* Push it to the right (if logo isn't doing so already) */
+        white-space: nowrap;
+        order: 2; /* Position after search bar, before logo */
+    }
+
+    .user-profile {
+        display: none; /* Keep user profile hidden as requested */
+    }
+
+    .featured-album-card {
+        height: 200px;
+    }
+
+    .songs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .music-player-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .progress-container,
+    .time-display,
+    .controls-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-album-content h3 {
+        font-size: 1.2em;
+    }
+
+    .featured-album-content p {
+        font-size: 0.85em;
+    }
+
+    .play-pause {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5em;
+    }
+
+    .controls-container button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2em;
+    }
+
+    .sidebar-logo {
+        /* Adjust for very small screens if needed, otherwise inherits from 768px */
+        font-size: 1em; /* Slightly smaller for very small screens */
+        order: 3; /* Ensure it stays on the right */
+    }
+
+    .welcome-heading {
+        /* Adjust for very small screens if needed */
+        font-size: 0.9em; /* Slightly smaller for very small screens */
+        order: 2; /* Ensure it stays in its place */
+    }
+
+    .section-title,
+    .featured-header h2 {
+        font-size: 1.3em;
+    }
+
+    .category-button {
+        font-size: 0.85em;
+        padding: 8px 16px;
+    }
+}
+
+/* Cute Contact Modal Layout */
+        .cute-layout {
+            max-width: 700px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #fff8fb;
+            animation: slideIn 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* Left-Right Layout */
+        .contact-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-image {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-image img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 20px;
+            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.1));
+        }
+
+        .contact-form {
+            flex: 1 1 300px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #eeabcf;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: #fff6fa;
+            box-shadow: 0 0 0 2px #f39ac9;
+        }
+
+        .contact-form button {
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 16px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ec407a;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .thank-you.hidden {
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {transform: translateY(50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-image img {
+                max-width: 150px;
+            }
+
+            .modal.contact-modal {
+                padding: 20px;
+            }
+        }
+        /* 🌸 Sign In Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(220, 180, 200, 0.3);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .modal {
+            background: #f1d2dd;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.4s ease;
+            position: relative; /* Added for close button */
+        }
+
+        .modal h2 {
+            font-size: 1.8rem;
+            color: #a221ad;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal input {
+            width: 100%;
+            padding: 12px 14px;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 12px;
+            background: #fce7ef;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .modal button {
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background: #d870ec;
+            color: #333;
+            border: none;
+            border-radius: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .modal button:hover {
+            background: #e71edd;
+            color: #fff;
+        }
+
+        .note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color:grey;
+        }
+
+        .note a {
+            color: #874c8c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Close Button for Sign In Modal */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #874c8c;
+            cursor: pointer;
+        }
+
+        /* Fade animation */
+        @keyframes fadeIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+         /* Cute Contact Modal Layout */
+        .cute-layout {
+            max-width: 700px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #fff8fb;
+            animation: slideIn 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* Left-Right Layout */
+        .contact-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-image {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-image img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 20px;
+            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.1));
+        }
+
+        .contact-form {
+            flex: 1 1 300px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #ffeef7;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: #fff6fa;
+            box-shadow: 0 0 0 2px #f39ac9;
+        }
+
+        .contact-form button {
+            background-color: #dd0a50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 16px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ec407a;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .thank-you.hidden {
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {transform: translateY(50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-image img {
+                max-width: 150px;
+            }
+
+            .modal.contact-modal {
+                padding: 20px;
+            }
+        }/* Featured Artists Section */
+.artists-section {
+    margin-top: 40px;
+    padding: 0 20px; /* Add some padding on the sides if needed */
+}
+
+.artists-section .section-title {
+    color: #e0e0e0; /* Light gray text */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+/* Carousel Container (the visible window) */
+.artists-carousel-container {
+    width: 100%;
+    overflow: hidden; /* Crucial: Hides artists outside the view */
+    position: relative; /* If you add navigation arrows later */
+    /* Adjust height as needed, or let content define it */
+    padding-bottom: 20px; /* Space below the carousel if needed */
+}
+
+/* Inner Carousel (the moving strip) */
+.artists-carousel {
+    display: flex; /* Arranges artist circles horizontally */
+    /* No width set here initially, it will be wider than its container */
+    /* We'll use JavaScript or a CSS animation to move this element */
+}
+
+/* Individual Artist Circle */
+.artist-circle {
+    flex-shrink: 0; /* Prevents circles from shrinking */
+    width: 200px; /* Adjust size of circles as needed */
+    height: 200px; /* Make sure height equals width for a perfect circle */
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Ensures image stays within the circle */
+    margin-right: 20px; /* Space between circles */
+    background-color: #3a3a3a; /* Fallback background */
+    display: flex; /* For centering content inside */
+    flex-direction: column; /* Stack image and text */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none; /* Remove underline from anchor tag */
+    color: #ffffff; /* Text color */
+    font-size: 0.9em;
+    font-weight: 400;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.artist-circle:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* More prominent shadow on hover */
+}
+
+.artist-circle img {
+    width: 100%; /* Image fills the circular container */
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 50%; /* Make the image itself circular */
+    /* Add a subtle border to the image if desired */
+    border: 3px solid transparent; /* Example: border for active/hover state */
+}
+
+.artist-circle span {
+    margin-top: 5px; /* Space between image and artist name */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    max-width: 90%; /* Ensure text stays within circle width */
+}
+
+
+/* --- CSS for the continuous loop animation --- */
