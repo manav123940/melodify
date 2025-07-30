@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Melodify</title>
+  <title>About Us - Melodify-by-manav</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
     * {
       margin: 0;
@@ -400,39 +401,42 @@
 </head>
 <body>
   <header class="navbar">
-  <div class="logo-container">
-    <img src="https://i.ibb.co/bMqH0ZXC/image.png" alt="Melodify Logo" class="logo" />
+  <div class="logo-container" data-aos="fade-down" data-aos-duration="1500">
+    <img src="https://i.ibb.co/bMqH0ZXC/image.png" alt="Melodify Logo" class="logo"  />
     <span class="brand-name">Melodify</span>
   </div>
 </header>
 
 
   <section class="container">
-    <div class="about-content">
+    <div class="about-content" data-aos="fade-up-right" data-aos-duration="1500">
       <h1>About Melodify</h1>
       <p>
         <strong>Melodify</strong> is a heartfelt creation by <strong>Manav</strong>, a passionate class 12th student who believes music is the purest escape. Melodify isn't just a music player—it's an experience designed to make you feel warm, nostalgic, and truly connected to your favorite melodies. With a soft aesthetic and cozy UI, Melodify invites you to sit back, relax, and hit play.
       </p>
     </div>
-    <div class="about-img">
+    <div class="about-img"  data-aos="fade-down-left" data-aos-duration="2000">
       <img src="https://cdn.pixabay.com/photo/2017/01/26/12/32/alpine-2010465_640.png" alt="About Melodify" />
     </div>
   </section>
   <!-- 🌸 New Other Projects Section -->
-<section class="other-projects">
+<section class="other-projects" data-aos="zoom-in-down" data-aos-duration="1500">
   <h2>Other Projects</h2>
   <div class="project-list">
-    <div class="project-card">
+    <div class="project-card" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
       <h3>MindfulMe</h3>
       <p>A meditation & wellness app to help you find peace and focus.</p>
       <a href="#">View Project</a>
     </div>
-    <div class="project-card">
+    <div class="project-card" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
       <h3>CodeBloom</h3>
       <p>A beginner-friendly platform to learn web development with a creative twist.</p>
       <a href="#">View Project</a>
     </div>
-    <div class="project-card">
+    <div class="project-card" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
       <h3>PoetryPad</h3>
       <p>A cozy space to read and write shayari, poems, and heart-touching lines.</p>
       <a href="#">View Project</a>
@@ -443,5 +447,9 @@
   <footer>
     &copy; 2025 Melodify. Created with ❤️ by Manav.
   </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
